@@ -1,0 +1,44 @@
+
+---
+
+# Custom License Agreement for Business Directory Backend
+
+## 1. License Grant
+
+Subject to the terms and conditions of this License Agreement (hereinafter "License"), Etech Solution Company (hereinafter "Licensor"), the authors and copyright holders of the Business Directory Backend (hereinafter "Software"), hereby grant you a limited, non-exclusive, non-transferable, and revocable license to use, modify, and integrate the Software solely for internal business purposes.
+
+## 2. Restrictions
+
+You may **not**:
+
+1. **Copy or Distribute**: Copy, distribute, sublicense, lease, sell, or otherwise transfer the Software or any portion thereof to any third party.
+2. **Public Display**: Publicly display or share the Software or its derivative works on any public platform or repository.
+3. **Commercial Use**: Use the Software for any commercial product, service, or offering without explicit prior written permission from the Licensor.
+4. **Reverse Engineer**: Decompile, reverse engineer, disassemble, or attempt to derive the source code of the Software, except and only to the extent that applicable law expressly permits.
+5. **Modification**: Modify the Software for public use, redistribution, or any other purpose that would circumvent the restrictions laid out in this License.
+
+## 3. Ownership
+
+The Software is owned by Etech Solution Company, and was developed by [Fitsum](https://github.com/Fitsumhelina) and [Yeabsira](https://github.com/Yabe12) during the 2024 summer internship program. All intellectual property rights in and to the Software, including but not limited to all source code, design, and documentation, are and shall remain the exclusive property of the Licensor. This License does not transfer ownership of any intellectual property rights to you.
+
+## 4. Termination
+
+This License is effective until terminated. Your rights under this License will terminate automatically without notice from the Licensor if you fail to comply with any term(s) of this License. Upon termination, you shall cease all use of the Software and destroy all copies, full or partial, of the Software.
+
+## 5. Disclaimer of Warranty
+
+The Software is provided "AS IS," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the Licensor or any of its affiliates, authors, or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the Software or the use or other dealings in the Software.
+
+## 6. Limitation of Liability
+
+In no event shall the Licensor or any of its affiliates, authors, or copyright holders be liable for any indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services, loss of use, data, or profits, or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of the Software, even if advised of the possibility of such damage.
+
+## 7. Governing Law
+
+This License shall be governed by and construed in accordance with the laws of the jurisdiction in which the Licensor resides, without regard to its conflict of law principles.
+
+## 8. Acknowledgment
+
+By using the Software, you acknowledge that you have read this License, understand it, and agree to be bound by its terms and conditions.
+
+---

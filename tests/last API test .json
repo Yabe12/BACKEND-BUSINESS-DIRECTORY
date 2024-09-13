@@ -1,0 +1,292 @@
+{
+  "info": {
+    "_postman_id": "your-unique-id",
+    "name": " API test to business directory project",
+    "description": "Collection of API tests for the Business Directory application",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"testuser\", \"email\": \"testuser@example.com\", \"password\": \"Password@123\", \"firstname\": \"Test\", \"lastname\": \"User\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"testuser@example.com\", \"password\": \"Password@123\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get User Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_JWT_TOKEN"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/users/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update User Profile",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_JWT_TOKEN"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"firstname\": \"Updated\", \"lastname\": \"User\", \"email\": \"updateduser@example.com\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Forgot Password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"testuser@example.com\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/forgot-password",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "forgot-password"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reset Password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\": \"RESET_TOKEN_HERE\", \"newPassword\": \"NewPassword@123\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/reset-password",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "reset-password"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete User Profile",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_JWT_TOKEN"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/users/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Business",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_JWT_TOKEN"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"businessName\": \"Test Business\", \"businessEmail\": \"business@example.com\", \"categoryId\": \"CATEGORY_ID_HERE\", \"businessAddress\": \"123 Business St\", \"businessPhone\": \"123-456-7890\", \"websiteUrl\": \"http://example.com\", \"latitude\": 40.7128, \"longitude\": -74.0060, \"openingTime\": \"09:00\", \"closingTime\": \"17:00\", \"businessLicenseNumber\": \"123456789\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/businesses/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "businesses", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Businesses",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/businesses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "businesses"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Business by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/businesses/BUSINESS_ID_HERE",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "businesses", ":id"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Business",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_JWT_TOKEN"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"businessName\": \"Updated Business Name\", \"businessEmail\": \"updated@example.com\", \"businessAddress\": \"456 New Address\", \"businessPhone\": \"987-654-3210\", \"openingTime\": \"08:00\", \"closingTime\": \"18:00\", \"businessLicenseNumber\": \"987654321\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/businesses/BUSINESS_ID_HERE",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "businesses", ":id"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Business",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_JWT_TOKEN"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/businesses/BUSINESS_ID_HERE",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "businesses", ":id"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Businesses by Category ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/businesses/category/CATEGORY_ID_HERE",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "businesses", "category", ":categoryId"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+// prisma/schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+// User model
+model User {
+  id                  String               @id @default(uuid())
+  username            String               @unique
+  email               String               @unique
+  password            String
+  firstname           String?
+  lastname            String?
+  businesses          Business[]           @relation("UserBusinesses")
+  comments            Comment[]
+  ratings             Rating[]
+  favorites           Favorite[]
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  passwordResetTokens PasswordResetToken[]
+}
+
+// Business model
+model Business {
+    id                     String   @id @default(uuid())
+    businessName           String
+    ownerId                String
+    categoryId             String
+    businessEmail          String
+    businessAddress        String
+    businessPhone          String
+    websiteUrl             String
+    latitude               Float
+    longitude              Float
+    openingTime           String   // Ensure this field exists
+  closingTime           String
+    businessLicenseNumber  Int? 
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  owner            User              @relation("UserBusinesses", fields: [ownerId], references: [id])
+  category         Category          @relation(fields: [categoryId], references: [id])
+  subCategoryId    String?
+  subCategory      SubCategory?      @relation(fields: [subCategoryId], references: [id])
+  socialMediaLinks SocialMediaLink[]
+  services         Service[]
+  comments         Comment[]
+  ratings          Rating[]
+  favorites        Favorite[]
+  photos           Photo[]
+}
+
+// Category model
+model Category {
+  id            String        @id @default(uuid())
+  name          String        @unique
+  businesses    Business[]
+  subCategories SubCategory[]
+}
+
+// SubCategory model
+model SubCategory {
+  id         String     @id @default(uuid())
+  name       String     @unique
+  categoryId String
+  category   Category   @relation(fields: [categoryId], references: [id])
+  businesses Business[]
+}
+
+// SocialMediaLink model
+model SocialMediaLink {
+  id         String   @id @default(uuid())
+  platform   String   // Consider using an enum for platform
+  url        String
+  businessId String
+  business   Business @relation(fields: [businessId], references: [id])
+}
+
+// Service model
+model Service {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  businessId  String
+  business    Business @relation(fields: [businessId], references: [id])
+}
+
+// Comment model
+model Comment {
+  id         String   @id @default(uuid())
+  userId     String
+  businessId String
+  comment    String
+  user       User     @relation(fields: [userId], references: [id])
+  business   Business @relation(fields: [businessId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// Rating model
+model Rating {
+  id         String   @id @default(uuid())
+  userId     String
+  businessId String
+  rating     Int
+  user       User     @relation(fields: [userId], references: [id])
+  business   Business @relation(fields: [businessId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// Favorite model
+model Favorite {
+  id         String   @id @default(uuid())
+  userId     String
+  businessId String
+  user       User     @relation(fields: [userId], references: [id])
+  business   Business @relation(fields: [businessId], references: [id])
+  createdAt  DateTime @default(now())
+}
+
+// Photo model
+model Photo {
+  id         String   @id @default(uuid())
+  businessId String
+  url        String
+  business   Business @relation(fields: [businessId], references: [id])
+  createdAt  DateTime @default(now())
+}
+
+// PasswordResetToken model
+model PasswordResetToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  expiresAt DateTime
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+}
