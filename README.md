@@ -62,7 +62,7 @@ This repository contains the backend code for the **Business Directory** platfor
 - **PostgreSQL**: Relational database management system for data persistence.
 - **Prisma**: ORM (Object-Relational Mapping) tool for database interaction and schema management.
 - **JWT (JSON Web Tokens)**: Used for implementing secure authentication and authorization.
-- **Nodemon**: Development tool to automatically restart the server upon detecting file changes.
+
 
 ## 🚀 Getting Started
 
@@ -70,7 +70,7 @@ This repository contains the backend code for the **Business Directory** platfor
 
 - **Node.js**: Install from [Node.js official website](https://nodejs.org/).
 - **PostgreSQL**: Install and set up PostgreSQL. Refer to the [official documentation](https://www.postgresql.org/docs/) for installation guidance.
-- **Docker** (Optional): For containerization and easier deployment of the application.
+
 
 ### ⚙️Installation
 
