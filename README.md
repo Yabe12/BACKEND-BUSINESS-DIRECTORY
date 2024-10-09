@@ -419,7 +419,8 @@ This project is licensed under the MIT License. For more information, see the [L
 
 For questions or suggestions, please reach out:
 
-- Fitsum Helina: [dev.fitsum@gmail.com](mailto:dev.fitsum@gmail.com)
 - Yeabsira Behailu: [GitHub Profile](https://github.com/Yabe12)
+- Fitsum Helina: [dev.fitsum@gmail.com](mailto:dev.fitsum@gmail.com)
+
 
 ---
